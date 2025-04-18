@@ -67,20 +67,21 @@ const gameDraw = () =>{
     msgContainer.classList.remove('hide');
     disableBoxes();
 }
-
-const disableBoxes =()=>{
-    boxes.forEach((box) =>{
-        box.disabled=true;
+const disableBoxes = () => {
+    boxes.forEach((box) => {
+        box.classList.add('disabled');
     });
 };
 
-const enableBox =()=>{
-
-    boxes.forEach((box) =>{
+const enableBox = () => {
+    boxes.forEach((box) => {
         box.innerText = "";
-        box.disabled = false;
+        box.classList.remove('disabled');
+        box.classList.remove('neonTextX');
+        box.classList.remove('neonTextO');
     });
 };
+
 const resetGame=()=>{
 
     turn = true;
